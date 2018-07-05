@@ -18,9 +18,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:id="@+id/input_name"
-                android:hint="@string/please_enter_your_name" />
+                android:inputType="textEmailAddress"
+                android:id="@+id/input_email"
+                android:hint="@string/please_enter_your_email" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -30,12 +30,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/input_email"
-                android:inputType="textEmailAddress"
+                android:id="@+id/input_password"
+                android:inputType="textPassword"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
                 android:padding="12dp"
-                android:hint="@string/please_enter_your_email" />
+                android:hint="@string/please_enter_your_password" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton

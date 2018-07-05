@@ -15,4 +15,5 @@
     <string name="blood_required" tools:keep="@string/blood_required">Please enter average blood required per month</string>
     <string name="persons_in_charge" tools:keep="@string/persons_in_charge">Persons in charge</string>
     <string name="signup" tools:keep="@string/signup">Signup</string>
+    <string name="please_enter_your_password">Please enter your password</string>
 </resources>

@@ -17,7 +17,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     private AppCompatButton loginButton;
-    private TextInputEditText inputName,inputEmail;
+    private TextInputEditText inputEmail,inputPassword;
     private TextView signUpAsDonor,signUpAsHospital;
 
     @Override
@@ -25,8 +25,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        inputName = findViewById(R.id.input_name);
         inputEmail = findViewById(R.id.input_email);
+        inputPassword = findViewById(R.id.input_password);
         loginButton = findViewById(R.id.btn_login);
         signUpAsDonor = findViewById(R.id.link_donor_sign_up);
         signUpAsHospital = findViewById(R.id.link_hospital_sign_up);
@@ -37,14 +37,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void userLogin(){
-        String name = Objects.requireNonNull(inputName.getText()).toString().trim();
-        String email = Objects.requireNonNull(inputEmail.getText()).toString().trim();
+        String name = Objects.requireNonNull(inputEmail.getText()).toString().trim();
+        String email = Objects.requireNonNull(inputPassword.getText()).toString().trim();
 
         if (TextUtils.isEmpty(name)){
-            Toast.makeText(this,"Please enter your registered name",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Please enter your registered email",Toast.LENGTH_LONG).show();
         }else {
             if (TextUtils.isEmpty(email)){
-                Toast.makeText(this,"Please enter your registered email",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Please enter your registered password",Toast.LENGTH_LONG).show();
             }else {
                 Toast.makeText(this,"Logged In",Toast.LENGTH_LONG).show();
             }

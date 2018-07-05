@@ -2,7 +2,6 @@ package suliteos.blooddonation;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,10 +12,9 @@ import java.util.Objects;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.Toolbar;
 
 public class SignUpDonor extends AppCompatActivity implements View.OnClickListener {
-    private TextInputEditText inputName,inputEmail,inputPhone,inputAddress,inputBloodType,inputDonated;
+    private TextInputEditText inputName,inputEmail,inputPassword,inputPhone,inputAddress,inputBloodType,inputDonated;
     private AppCompatButton signUp;
 
     @Override
@@ -25,6 +23,7 @@ public class SignUpDonor extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.donor_sign_up);
         inputName = findViewById(R.id.input_name);
         inputEmail = findViewById(R.id.input_email);
+        inputPassword = findViewById(R.id.input_password);
         inputPhone = findViewById(R.id.input_phone);
         inputAddress = findViewById(R.id.input_address);
         inputBloodType = findViewById(R.id.input_blood_type);
@@ -37,6 +36,7 @@ public class SignUpDonor extends AppCompatActivity implements View.OnClickListen
     private void registerAsDonor() {
         String donarName = Objects.requireNonNull(inputName.getText()).toString().trim();
         String donarEmail = Objects.requireNonNull(inputEmail.getText()).toString().trim();
+        String donorPassword = Objects.requireNonNull(inputPassword.getText().toString().trim());
         String phone = Objects.requireNonNull(inputPhone.getText()).toString().trim();
         String address = Objects.requireNonNull(inputAddress.getText()).toString().trim();
         String bloodType = Objects.requireNonNull(inputBloodType.getText()).toString();
@@ -48,22 +48,26 @@ public class SignUpDonor extends AppCompatActivity implements View.OnClickListen
             if (TextUtils.isEmpty(donarEmail)) {
                 Toast.makeText(this, "Please enter your email", Toast.LENGTH_LONG).show();
             } else {
-                if (TextUtils.isEmpty(phone)) {
-                    Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_LONG).show();
+                if (TextUtils.isEmpty(donorPassword)) {
+                    Toast.makeText(this, "Please enter your password", Toast.LENGTH_LONG).show();
                 } else {
-                    if (phone.length() < 10) {
-                        Toast.makeText(this, "Phone number is too short,enter a minimum of 10 numbers", Toast.LENGTH_LONG).show();
+                    if (TextUtils.isEmpty(phone)) {
+                        Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_LONG).show();
                     } else {
-                        if (TextUtils.isEmpty(address)) {
-                            Toast.makeText(this, "Please enter your address", Toast.LENGTH_LONG).show();
+                        if (phone.length() < 10) {
+                            Toast.makeText(this, "Phone number is too short,enter a minimum of 10 numbers", Toast.LENGTH_LONG).show();
                         } else {
-                            if (TextUtils.isEmpty(bloodType)) {
-                                Toast.makeText(this, "Please enter your blood group", Toast.LENGTH_LONG).show();
+                            if (TextUtils.isEmpty(address)) {
+                                Toast.makeText(this, "Please enter your address", Toast.LENGTH_LONG).show();
                             } else {
-                                if (TextUtils.isEmpty(donate)) {
-                                    Toast.makeText(this, "Please enter when you last donated blood", Toast.LENGTH_LONG).show();
-                                }else {
-                                    Toast.makeText(this,"Signed Up As Donor",Toast.LENGTH_LONG).show();
+                                if (TextUtils.isEmpty(bloodType)) {
+                                    Toast.makeText(this, "Please enter your blood group", Toast.LENGTH_LONG).show();
+                                } else {
+                                    if (TextUtils.isEmpty(donate)) {
+                                        Toast.makeText(this, "Please enter when you last donated blood", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Toast.makeText(this, "Signed Up As Donor", Toast.LENGTH_LONG).show();
+                                    }
                                 }
                             }
                         }
@@ -72,7 +76,6 @@ public class SignUpDonor extends AppCompatActivity implements View.OnClickListen
             }
         }
     }
-
     @Override
     public void onClick(View view) {
         if (view==signUp){
