@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Blood Donation</string>
+    <string name="please_enter_your_password" tools:keep="@string/please_enter_your_password">Please enter your password</string>
+    <string name="login">Login</string>
+    <string name="create_a_blood_donor_account">Create a Donor Account</string>
+    <string name="hospital_account">Create a Hospital Account</string>
+    <string name="please_enter_your_name" tools:keep="@string/please_enter_your_name">Please Enter your name</string>
+    <string name="please_enter_your_email">Please enter your email</string>
+    <string name="please_enter_your_phone_number" tools:keep="@string/please_enter_your_phone_number">Please enter your Phone number</string>
+    <string name="please_enter_your_address" tools:keep="@string/please_enter_your_address">Please enter your Address</string>
+    <string name="please_enter_your_blood_type" tools:keep="@string/please_enter_your_blood_type">Please enter your Blood Type</string>
+    <string name="please_enter_when_you_last_donated" tools:keep="@string/please_u_when_you_last_donated">Please enter when you last donated blood</string>
+    <string name="hospital_name" tools:keep="@string/hospital_name">Please Enter hospital Name</string>
+    <string name="please_enter_hospital_address" tools:keep="@string/please_enter_hospital_address">Please enter hospital address</string>
+    <string name="blood_required" tools:keep="@string/blood_required">Please enter average blood required per month</string>
+    <string name="persons_in_charge" tools:keep="@string/persons_in_charge">Persons in charge</string>
+    <string name="signup" tools:keep="@string/signup">Signup</string>
+</resources>
